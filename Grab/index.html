@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CodePro.vn - CyberSoft.edu.vn </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="./images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
+	<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<!--===============================================================================================-->
+</head>
+
+<body>
+
+	<div class="container-contact100">
+		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422"
+			data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+		<table class="table contact100-map">
+			<thead>
+				<tr>
+					<th colspan="4" class="text-center">Thông tin hoá đơn</th>
+				</tr>
+				<tr>
+					<th scope="col">Chi tiết</th>
+					<th scope="col">Sử dụng</th>
+					<th scope="col">Đơn giá</th>
+					<th scope="col">Thành tiền</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>KM đầu tiên</th>
+					<td class="useDistance"></td>
+					<td class="unitPrice"></td>
+					<td class="totalPrice"></td>
+				</tr>
+				<tr>
+					<th>Từ 1 đến 19km</th>
+					<td class="useDistance"></td>
+					<td class="unitPrice"></td>
+					<td class="totalPrice"></td>
+				</tr>
+				<tr>
+					<th>Từ 19km trở lên</th>
+					<td class="useDistance"></td>
+					<td class="unitPrice"></td>
+					<td class="totalPrice"></td>
+				</tr>
+				<tr>
+					<th>Thời gian chờ</th>
+					<td class="useTime"></td>
+					<td class="unitPrice"></td>
+					<td class="totalPrice"></td>
+				</tr>
+				<tr>
+					<td class="text-right" colspan="3">Tổng tiền: <p id="total"></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="wrap-contact100">
+			<div>
+				<img src="./images/cybersoft.png" alt="Front End CyberSoft" width="40%" />
+				<span style="padding:20px"></span>
+				<!-- <img src="./images/codepro.png" alt="Front End CyberSoft" width="30%" /> -->
+
+				<div style="clear:both"></div>
+				<span class="contact100-form-title">
+					TÍNH CƯỚC GRAB
+				</span>
+				<h2>Vui lòng chọn loại xe:</h2>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" value="0">
+					<label class="form-check-label" for="inlineRadio1">Grab Car</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" value="1">
+					<label class="form-check-label" for="inlineRadio2">Grab Suv</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" value="2">
+					<label class="form-check-label" for="inlineRadio2">Grab Black</label>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+
+			<form class="contact100-form">
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<h2>Nhập vào số KM </h2>
+					<input class="input100" type="text" id="distance" name="name" placeholder="Số KM ...">
+					<span class="focus-input100"></span>
+
+				</div>
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<h2>Nhập thời gian chờ </h2>
+					<input class="input100" type="text" id="time" name="name" placeholder="Thời gian chờ  ...">
+					<span class="focus-input100"></span>
+
+				</div>
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<h2>Tổng tiền</h2>
+					<input class="input100" type="text" id="totalPrice" name="total">
+					<span class="focus-input100"></span>
+
+				</div>
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="button" class="contact100-form-btn" onclick="hienThiTongTien()">
+						TÍNH TIỀN
+					</button>
+				</div>
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="button" class="contact100-form-btn" data-toggle="modal" onclick="inHoaDon()"
+						data-target="#exampleModal">
+						IN HÓA ĐƠN
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<!--===============================================================================================-->
+	<script src="./vendor/jquery/jquery.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./vendor/bootstrap/js/popper.min.js"></script>
+	<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+
+
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script> -->
+	<!-- <script src="./js/map-custom.js"></script> -->
+	<!--===============================================================================================-->
+
+	<script src="./main.js"></script>
+
+</body>
+
+</html>
