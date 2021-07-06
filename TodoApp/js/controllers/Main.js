@@ -14,6 +14,7 @@ function getListTask() {
     isLoading(true);
     taskServices.listTaskApi().then(res => {
         var list = res.data;
+        console.log(list);
         getElement('todo').innerHTML = renderHTML(list, false);
         getElement('completed').innerHTML = renderHTML(list, true);
         isLoading(false);
