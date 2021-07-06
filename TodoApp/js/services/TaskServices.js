@@ -1,9 +1,10 @@
-function TaskServices() {
+function TaskServices(url = "https://60e46eea5bcbca001749e9b7.mockapi.io/activity") {
+    this.linkApi = url;
 }
 
 TaskServices.prototype.listTaskApi = function () {
     var promise = axios({
-        url: "https://60e46c855bcbca001749e9a4.mockapi.io/activity",
+        url: this.linkApi,
         method: "GET"
     });
     return promise;
@@ -11,7 +12,7 @@ TaskServices.prototype.listTaskApi = function () {
 
 TaskServices.prototype.createTaskApi = function (task) {
     var promise = axios({
-        url: "https://60e46c855bcbca001749e9a4.mockapi.io/activity",
+        url: this.linkApi,
         method: "POST",
         data: task
     });
@@ -20,7 +21,7 @@ TaskServices.prototype.createTaskApi = function (task) {
 
 TaskServices.prototype.editTaskApi = function (id) {
     var promise = axios({
-        url: `https://60e46c855bcbca001749e9a4.mockapi.io/activity/${id}`,
+        url: `${this.linkApi}/${id}`,
         method: "GET"
     });
     return promise;
@@ -28,7 +29,7 @@ TaskServices.prototype.editTaskApi = function (id) {
 
 TaskServices.prototype.updateTaskApi = function (id, form) {
     var promise = axios({
-        url: `https://60e46c855bcbca001749e9a4.mockapi.io/activity/${id}`,
+        url: `${this.linkApi}/${id}`,
         method: "PUT",
         data: form
     });
@@ -38,7 +39,7 @@ TaskServices.prototype.updateTaskApi = function (id, form) {
 
 TaskServices.prototype.deleteTaskApi = function (id) {
     var promise = axios({
-        url: `https://60e46c855bcbca001749e9a4.mockapi.io/activity/${id}`,
+        url: `${this.linkApi}/${id}`,
         method: "DELETE"
     });
     return promise;
